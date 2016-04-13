@@ -1,0 +1,35 @@
+# -*- python -*-
+from lsst.sconsUtils import scripts, targets, env
+import os
+
+# suiteparse = "/sps/lsst/Library/SuiteSparse"
+suiteparse = "SuiteSparse"
+
+
+# compilation flags:
+# we do not use the supernodal factorization, and there 
+# are two flags associated to that: SUPERNODAL and PARTITION
+# We do not need the timer either, and compiling the routines
+# associated to it is troublesome because the library they reside 
+# is different on different systems.
+for flag in ("-fexceptions", "-DNSUPERNODAL", "-DNPARTITION","-DNTIMER"):
+    env["CFLAGS"].append(flag)
+    env["CXXFLAGS"].append(flag)
+
+includes = ("SuiteSparse_config", 
+"templates", 
+"Include",
+"AMD/Include",
+"CHOLMOD/Include",
+"COLAMD/Include")
+
+for include in includes:
+    env["CFLAGS"].append("-I./%s" % include)
+
+objs = env.SourcesForSharedLibrary(Glob("#src/*.c"))
+
+libs = env.getLibs("self")
+# might need librt on "old" linux environments if the "DNTIMER" CPP flag is not set 
+targets["lib"].extend(env.SharedLibrary(env["packageName"], objs, LIBS=libs))
+
+
