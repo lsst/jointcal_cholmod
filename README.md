@@ -1,5 +1,6 @@
+================
 jointcal_cholmod
-################
+================
 
 This package collects the C functions extracted from **SuiteSparse** we need for jointcal, without any other dependencies. In particular, this avoids a dependency on BLAS/LAPACK, which is unnecessary for jointcal.
 
