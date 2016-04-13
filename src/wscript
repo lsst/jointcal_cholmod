@@ -10,9 +10,9 @@ def build(bld):
     # sources 
     c_sources = bld.path.ant_glob('*.c')
             
-    lib = bld.shlib(name = 'micro-cholmod', 
+    lib = bld.shlib(name = 'joint-cholmod', 
                     source = c_sources ,
-                    target = 'micro-cholmod', 
+                    target = 'joint-cholmod', 
                     includes = '.  ./../templates ../AMD/Include ../COLAMD/Include',
                     cflags = '-DNSUPERNODAL -DNPARTITION',
                     use = ['m'])

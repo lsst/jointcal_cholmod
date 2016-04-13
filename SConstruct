@@ -1,3 +1,3 @@
 # -*- python -*-
 from lsst.sconsUtils import scripts
-scripts.BasicSConstruct("micro_cholmod")
+scripts.BasicSConstruct("jointcal_cholmod")
