@@ -57,7 +57,7 @@
 /* === initialize_node ====================================================== */
 /* ========================================================================== */
 
-static int initialize_node  /* initial work for kth node in postordered etree */
+static Int initialize_node  /* initial work for kth node in postordered etree */
 (
     Int k,		/* at the kth step of the algorithm (and kth node) */
     Int Post [ ],	/* Post [k] = i, the kth node in postordered etree */
