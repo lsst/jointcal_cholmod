@@ -12,7 +12,7 @@ suiteparse = "SuiteSparse"
 # We do not need the timer either, and compiling the routines
 # associated to it is troublesome because the library they reside 
 # is different on different systems.
-for flag in ("-fexceptions", "-DNSUPERNODAL", "-DNPARTITION","-DNTIMER"):
+for flag in ("-fexceptions", "-DNSUPERNODAL", "-DNPARTITION","-DNTIMER", "-DDLONG"):
     env["CFLAGS"].append(flag)
     env["CXXFLAGS"].append(flag)
 
