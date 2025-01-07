@@ -2,3 +2,4 @@
 .sconsign.dblite
 *.os
 python/lsst/jointcal/cholmod/version.py
+python/*.dist-info/
