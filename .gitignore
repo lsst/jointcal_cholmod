@@ -3,3 +3,7 @@
 *.os
 python/lsst/jointcal/cholmod/version.py
 python/*.dist-info/
+_build*
+__pycache__
+config.log
+*.dylib
