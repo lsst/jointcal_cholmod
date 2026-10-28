@@ -1,0 +1,9 @@
+prefix=${pcfiledir}/../..
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: lsst_jointcal_cholmod
+Description: CHOLMOD sparse Cholesky factorization for jointcal
+Version: @VERSION@
+Cflags: -I${includedir}
+Libs: -L${libdir} -ljointcal_cholmod
